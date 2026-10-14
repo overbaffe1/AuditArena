@@ -76,3 +76,7 @@
 - Использует ли control plane те же egress-правила, что sandbox: приведённые probes относятся только к этой VM.
 - Есть ли изоляция от host/других VM на уровне hypervisor: тестов escape или доступа к другим sandbox не проводилось.
 - Точный тип GitHub user token; token value, credential files и секреты не раскрывались.
+
+### Публикация отчёта
+
+Снимок состояния GitHub в разделе 3 снят до публикации: тогда remote содержал только `main`. После проверки отчёт закоммичен и отправлен в `arena/b030c45c-auditarena`; существование remote-ветки и совпадение commit подтверждены через `git ls-remote` и GitHub API. `main` не изменялась; pull request не создавался.
