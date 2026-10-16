@@ -38,7 +38,7 @@ WS = '/tmp/arena-workspace'
 LOG_REPO = os.path.join(REPO, '.arena-watch-rev6.log')
 LOG_TMP = '/tmp/arena-watch-rev6.log'
 SELF_NAMES = {'.arena-watch-rev6.log', 'arena-watch-rev6.log'}  # собственные записи (репо и зеркало в /tmp)
-MAX_LOG = 400000                                 # байт, затем урезаем хвост
+MAX_LOG = 150000                                 # байт, затем урезаем хвост
 INLINE_MAX = 4000                                # байт содержимого мелкого файла в лог
 POLL = 0.01                                      # период опроса /proc и inotify
 TICK = 30.0                                      # период служебной отметки
@@ -98,7 +98,7 @@ def log(obj):
                 f.write(line)
             try:
                 if os.path.getsize(p) > MAX_LOG:
-                    data = open(p, 'rb').read()[-100000:]
+                    data = open(p, 'rb').read()[-60000:]
                     with open(p, 'wb') as f:
                         f.write(b'...trimmed...\n' + data)
             except OSError:
