@@ -1,0 +1,50 @@
+{
+  "scope": "fingerprints only; raw access-token values and prefixes omitted",
+  "note": "same bearer fingerprint observed in r19 and r20 resume windows; values were not replayed",
+  "observations": [
+    {
+      "round": 19,
+      "capture": "artifacts/round19/resume-window.json",
+      "utc": "21:21:21.841",
+      "header_token_len": 64,
+      "header_token_sha512_12": "27ff613aaf62",
+      "body_token_redaction": {
+        "len": 64,
+        "sha256_8": "2a1cc6b1"
+      }
+    },
+    {
+      "round": 19,
+      "capture": "artifacts/round19/resume-window.json",
+      "utc": "21:21:21.842",
+      "header_token_len": 64,
+      "header_token_sha512_12": "27ff613aaf62",
+      "body_token_redaction": {
+        "len": 64,
+        "sha256_8": "2a1cc6b1"
+      }
+    },
+    {
+      "round": 20,
+      "capture": "artifacts/round20/resume2-window.json",
+      "utc": "21:44:36.980",
+      "header_token_len": 64,
+      "header_token_sha512_12": "27ff613aaf62",
+      "body_token_redaction": {
+        "len": 64,
+        "sha256_8": "2a1cc6b1"
+      }
+    },
+    {
+      "round": 20,
+      "capture": "artifacts/round20/resume2-window.json",
+      "utc": "21:44:36.981",
+      "header_token_len": 64,
+      "header_token_sha512_12": "27ff613aaf62",
+      "body_token_redaction": {
+        "len": 64,
+        "sha256_8": "2a1cc6b1"
+      }
+    }
+  ]
+}
