@@ -1,0 +1,21 @@
+name: arena-probe17
+on:
+  workflow_dispatch:
+
+# Зонд раунда 17: может ли агент песочницы породить ВНЕШНЕГО агента
+# (GitHub Actions runner). Секреты не печатаются: только ОС, egress-IP раннера
+# и издатель TLS-сертификата github.com (сравнение с перехватом E2B из песочницы).
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: probe
+        run: |
+          echo "runner-os: $(uname -srm)"
+          echo "runner-egress: $(curl -s --max-time 5 https://api.ipify.org || echo unavailable)"
+          echo "github-cert:"
+          echo | openssl s_client -connect github.com:443 -servername github.com 2>/dev/null \
+            | openssl x509 -noout -issuer -subject 2>/dev/null || echo cert-unavailable
+          echo "ref: $GITHUB_REF"
+          echo "actor: $GITHUB_ACTOR"
+          echo "token-len: ${#GITHUB_TOKEN}"
