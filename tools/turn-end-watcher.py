@@ -35,8 +35,10 @@ import time
 REV = 6
 REPO = '/home/user/AuditArena'
 WS = '/tmp/arena-workspace'
-LOG_REPO = os.path.join(REPO, '.arena-watch-rev6.log')
-LOG_TMP = '/tmp/arena-watch-rev6.log'
+# Зеркало лога в репозиторий включается только явно: неотслеживаемый лог попадает
+# в патчсет конца хода и цитирует сам себя (раунды 9-12). По умолчанию — только /tmp.
+LOG_REPO = os.path.join(REPO, '.arena-watch-rev6.log') if os.environ.get('ARENA_WATCH_REPO_LOG', '0') == '1' else None
+LOG_TMP = os.environ.get('ARENA_WATCH_LOG', '/tmp/arena-watch-rev6.log')
 SELF_NAMES = {'.arena-watch-rev6.log', 'arena-watch-rev6.log'}  # собственные записи (репо и зеркало в /tmp)
 MAX_LOG = 150000                                 # байт, затем урезаем хвост
 INLINE_MAX = 4000                                # байт содержимого мелкого файла в лог
@@ -92,7 +94,7 @@ def log(obj):
     obj['t_mono'] = round(time.monotonic(), 6)
     obj['utc'] = time.strftime('%H:%M:%S', time.gmtime()) + '.%03d' % (int(time.time() * 1000) % 1000)
     line = json.dumps(obj, ensure_ascii=False) + '\n'
-    for p in (LOG_REPO, LOG_TMP):
+    for p in [x for x in (LOG_REPO, LOG_TMP) if x]:
         try:
             with open(p, 'a', encoding='utf-8') as f:
                 f.write(line)
@@ -220,7 +222,7 @@ while True:
             wd_, mask, cookie, length = struct.unpack_from('iIII', raw, off)
             name = raw[off + 16:off + 16 + length].split(b'\0')[0].decode('utf-8', 'replace')
             off += 16 + length
-            if name in SELF_NAMES or 'arena-watch-rev6' in name:
+            if name in SELF_NAMES or 'arena-watch' in name or name == os.path.basename(LOG_TMP):
                 continue
             base = wd2path.get(wd_, '?wd%d' % wd_)
             full = os.path.join(base, name) if name else base
