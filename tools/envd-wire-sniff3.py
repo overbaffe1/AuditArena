@@ -35,7 +35,8 @@ LOG_REPO = (os.path.join(os.environ.get('ARENA_REPO', '/home/user/AuditArena'),
             if os.environ.get('SNIFF_REPO_LOG', '0') == '1' else None)
 BODY_MAX = int(os.environ.get('SNIFF_BODY_MAX', '4096'))
 CAPTURE_PATHS = ('/process.Process/Start', '/filesystem.Filesystem/Stat',
-                 '/init', '/process.Process/List', '/process.Process/Connect')
+                 '/init', '/process.Process/List', '/process.Process/Connect',
+                 '/filesystem.Filesystem/WatchDir', '/freeze', '/fsthaw', '/unfreeze')
 MAX_HDR = 65536
 
 REDACT = [re.compile(p) for p in (

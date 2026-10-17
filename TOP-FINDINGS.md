@@ -1,0 +1,36 @@
+# TOP-FINDINGS: звёздный рейтинг находок аудита (раунды 5–20)
+
+Обновлено: 2026-10-17, ~22:00 UTC (раунд 20). Рейтинг — «крутость» находки по совокупности новизны, доказательности и последствий. Ссылки — на `investigation-roundN.md`.
+
+## ★★★★★
+
+1. **Одна kernel-линия с Jun 15 17:00:01.** `boot_id` `7b0855bc…` не менялся ни на одной границе; systemd-журнал переживает все «пересоздания»; envd (`bash[1229]`) пишет в него с Jun 15 и сегодня. «Пересоздание» = resume **базового снимка шаблона** (память Jun 15 → пользовательские процессы мертвы) + **персистентный диск** (неотслеживаемые файлы выживают) + повторный бутстрап (откат HEAD + `coding.patch`). «Resume» = свежий снимок песочницы (процессы живы). `btime`/«момент бутa» — артефакт перевода часов через `/init`. (r19–20)
+2. **Полный цикл pause/resume, пойманный живьём в проводе.** `POST /freeze?maxWaitMs=1500&mode=hierarchy&maxCgroups=512` → 204, **задержанный в очереди на 11 минут** и доставленный в момент resume (`date: 21:33:12`, сняфлен 21:44:36.977) → `POST /init`×2 (тот же токен, новый `lifecycleID`, тот же CA) → thaw внутри `/init` → chronyd «Forward time jump» → ресинк через **PHC0** → resume-хук `systemctl is-active systemd-networkd` → инструменты. (r16, r19, r20)
+3. **Путь доставки `GH_TOKEN`.** `envVars` в теле boot-`/init` (OpenAPI + `init.go:448 ReplaceUserVars`) → только RAM envd (`utils.EnvVars`, internal/user-разделение; environ envd чист, на диске следов нет) → инъекция в каждый процесс. Легальный дамп — `GET /envs` (защищён лишь токеном, который сниффабель: цепочка риска №40). `E2B_TEMPLATE_ID`/`E2B_SANDBOX_ID` = MMDS `envID`/`instanceID`; `E2B_EVENTS_ADDRESS` = `http://192.0.2.1/logs`. (r19)
+4. **Файловые инструменты мимо DAC.** Данные пишет/читает envd от root (`POST /files`: EnsureDirs → pre-chown → OpenFile(0666) → chown; `GET /files` без сброса привилегий); оба пути в `authExcludedPaths` — **без токена**; создание в `/etc`, `/usr/share`, `/opt` без sudo; перезапись root-файла 600 в `/opt` успешна; в `/tmp` отказ из-за `fs.protected_regular=2`, но pre-chown уже раскрывает содержимое. (r15, риски №29–31)
+5. **MITM TLS с CA, доставляемым через `/init`.** `O=E2B, CN=E2B Proxy CA` — своё поколение на песочницу (serial/notBefore различаются), появляется в `caBundle` каждого `/init`, ставится `caCertInstaller.Install`; цепочка github.com реально подписана им; каталог CA 777, `/etc/ssl/certs` — bind-mount с `/run/e2b/certs`; прокси ещё и **перезаписывает `Authorization`** (№26). (r13, r18, r19)
+
+## ★★★★
+
+6. **Миграция при resume.** Пауза 11,4 мин → resume **на другом хосте**: peer `.48`→`.6`, новый `lifecycleID` (`cb36d930…`→`d1d7d42d…` — поколение на каждый resume), `Host: 10.11.0.3:49983` (host-сторона, сеть 10.11.0.x) у прямых вызовов и `Host: 49983-imosg17opozcvx0fcjvzj.e2b.app` у SDK-вызовов — **тот же доменный паттерн, что у live-preview** `{port}-{sandboxId}.e2b.app`. Два долгих ESTAB-потока: `WatchDir` и stdout длинного инструментального вызова. (r20)
+7. **Креды платформы.** `GH_TOKEN` (24 симв., `arena…`) = installation-токен GitHub App «Arena AI Coding Agent» (app 4187077, установка 154763295), scopes: contents, pull_requests, workflows, repository_hooks:write. Внешний агент через Actions заблокирован дважды: `gh workflow run --ref <не-default>` → 404 (реестр только из main), `workflow_dispatch` API → 403 (нет `actions` у установки). (r9–r17)
+8. **Механизм live-tail.** Поток `POST /filesystem.Filesystem/WatchDir` (push) + поллинг: на **любое изменение файла в корне workspace** — один `Stat`+`GET /files` от root мимо DAC; непрерывно меняющиеся корневые файлы tail-ятся (Stat до 5,7/с); подкаталоги и `/tmp` не читаются. (r17–r20, №36)
+9. **MMDS доступен всем и раскрывает токен.** `accessTokenHash` = sha512(действующий `X-Access-Token`) — совпадение подтверждено на трёх песочницах/после ротаций; плюс `envID`, `instanceID`, `address` (hyperloop). Запись 400/501. (r12–r19, №35)
+10. **Деплой envd отстал от upstream на ~4 месяца.** Бинарник: go1.26.3, `github.com/e2b-dev/infra/packages/envd`, без vcs-штампов; ответы `/init` несут только `cache-control/vary/date/connection` — **нет** `X-Envd-Version/-Freeze-Audit/-Defaults/-Memory/-Handover/-Init-Clock-Correction`, существующих в октябре (main): live-upgrade `/upgrade`, аудит заморозки, гейт handover — не в деплое. (r20)
+11. **400 у коллектора логов объяснён источником.** `hyperloopserver/handlers/logs.go`: `GetByHostPort` → 400 «Error when finding source sandbox»; `validatePayloadSandboxID` → 400 «Invalid sandboxID in logs payload» с комментарием «Inflight logs with old sandboxID from snapshotted sandbox» (известная проблема: «Change to error once we have a way how to tell sandbox to flush … when being paused»); `hasStaleLogTimestamp` против `LifecycleStartedAt`; identity перезаписывается доверенными `sandboxID/templateID/teamID/buildID`; маршрутизация логов — **LaunchDarkly** (ретаргет без передеплоя) + shadow-writes. Следствие: на каждой границе envd-логи дропаются — телеметрия платформы слепнет ровно в момент пауз (форензический маркер snapshot-resume). (r20)
+
+## ★★★
+
+12. **cgroup-топология изнутри.** Все инструменты — в `/user` (13 процессов, включая приборы; цель `/freeze mode=hierarchy`); `envd.service`: `memory.min=52428800` (50 МиБ гарантии — аналог `X-Envd-Memory`), `Nice=-20`, `IOSchedulingClass=realtime(4)`, `OOMPolicy=continue`; есть cgroup `socats` (пуст, memory.min=5 МиБ); процессы инструментов — обёртка `oom_score_adj=100`/`ionice best-effort`/`nice 20` (upstream `handler.go:104–108`); nat-таблица пуста (пиннинг MMDS-маршрута — только self-heal при сбоях чтения). (r16, r20)
+13. **Пустые пароли root и user + sshd + PAM** — проверены реальным входом (`su`, ssh localhost). (r5–8, №18)
+14. **Инвентарь инструментов: 16 штук, суб-агентного нет.** Паузящие инструменты (`add_voice`, `ask_user`) **ставят песочницу на паузу в середине хода**: голосование r17 = pause + resume с `/init` в 21:04:09 (принято в r18 за «ротацию» — исправлено в r19). (r17–r19)
+15. **Firecracker-детали.** `/proc/cmdline`: `ip=169.254.0.21::169.254.0.22:255.255.255.252` (host-шлюз .22), `root=/dev/vda rw discard`, 4×`virtio_mmio`, `clocksource=kvm-clock`, `panic=1`, `reboot=k`, `loglevel=1`, `pci=off`; DMI/SMBIOS пуст; сеть eth0 /30, пул оркестраторов 10.12.0.x, hyperloop 192.0.2.1 (TEST-NET-1) через шлюз. (r5, r19–20)
+
+## ★★
+
+16. **`fetch_page` ходит через кэш-прокси Alibaba OSS** (`routify-file-proxy-sg.oss-ap-southeast-1.aliyuncs.com`); параллельные вызовы ломаются `SignatureDoesNotMatch` (баг подписи прокси), ретрай/последовательные проходят; обход для кода — codeload-tarball. (r19)
+17. **`fs.protected_regular=2` ломает перезапись в sticky-каталогах даже root-у** (эксперимент sysctl 2→0→2, восстановлен), но pre-chown до отказа уже раскрывает наличие/владельца. (r15, №30/№32)
+18. **Бутстрап «пересоздания» исполняется в VM** в начале хода: clone depth-1 main → fetch SHA → checkout -b → `git am`-подобное наложение `coding.patch` (сборщик 4038 симв., BASE `7f14bf3`, 31 исключение) — всё через envd API, наблюдаемо поллером/наблюдателем. (r11, r14)
+
+---
+Методология: значения токенов не печатаются (len/префикс/отпечаток), реплей перехваченных кредов не выполнялся, force-push и `main` не тронуты, время UTC. Полный список рисков №18–43 — в отчётах раундов.
