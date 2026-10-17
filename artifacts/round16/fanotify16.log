@@ -1,0 +1,1 @@
+{"event": "start", "pid": 2439, "marked": [{"path": "/tmp/arena-workspace", "ok": true, "errno": null}, {"path": "/opt", "ok": true, "errno": null}, {"path": "/etc", "ok": true, "errno": null}], "utc": "19:35:07.520", "t_real": 1792265707.5208845}

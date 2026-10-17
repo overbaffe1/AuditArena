@@ -1,0 +1,127 @@
+[
+ {
+  "utc": "21:21:21.839",
+  "dir": "in",
+  "peer": "10.12.0.54",
+  "first": "HTTP/1.1 204 No Content",
+  "token": null
+ },
+ {
+  "utc": "21:21:21.841",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "POST /init",
+  "token": "27ff613aaf62"
+ },
+ {
+  "utc": "21:21:21.841",
+  "dir": "out",
+  "body_red": "{\"accessToken\":\"<REDACTED len=64 sha8=2a1cc6b1>\",\"caBundle\":\"-----BEGIN CERTIFICATE-----\\nMIIBizCCATCgAwIBAgIQc5rrYZyGayDAlTk3RjQW2DAKBggqhkjOPQQDAjAlMQww\\nCgYDVQQKEwNFMkIxFTATBgNVBAMTDEUyQiBQcm94eSBDQTAeFw0yNjEwMTYxMDUw\\nMDdaFw0yNzEwMTYxMTUwMDdaMCUxDDAKBgNVBAoTA0UyQjEVMBMGA1UEAxMMRTJC\\nIFByb3h5IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMDrzdr2t1FaViKE8\\ntVVj79KAx13SfXiV+q/ghI+NiS4PLlz90qnKyXGXmDJOVQOOUexNiIE3Ov+mWkpI\\nhcg83qNCMEAwDgYDVR0PAQH/BAQDAgIEMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0O\\nBBYEFN3UbzXxAiZZmZC9a+6VkoXsErIWMAoGCCqGSM49BAMCA0kAMEYCIQD17Wai\\nak/Dzbia2mW0dC+H2DRuFNqFcvQxhos8TYhi5gIhAN2zQT1lQXM55ual8UQiXqpx\\nJuj6jSYb6jjkVa7mKelV\\n-----END CERTIFICATE-----\\n\",\"cpuCount\":2,\"defaultUser\":\"use"
+ },
+ {
+  "utc": "21:21:21.841",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 204 No Content",
+  "token": null
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "POST /init",
+  "token": "27ff613aaf62"
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "out",
+  "body_red": "{\"accessToken\":\"<REDACTED len=64 sha8=2a1cc6b1>\",\"caBundle\":\"-----BEGIN CERTIFICATE-----\\nMIIBizCCATCgAwIBAgIQc5rrYZyGayDAlTk3RjQW2DAKBggqhkjOPQQDAjAlMQww\\nCgYDVQQKEwNFMkIxFTATBgNVBAMTDEUyQiBQcm94eSBDQTAeFw0yNjEwMTYxMDUw\\nMDdaFw0yNzEwMTYxMTUwMDdaMCUxDDAKBgNVBAoTA0UyQjEVMBMGA1UEAxMMRTJC\\nIFByb3h5IENBMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEMDrzdr2t1FaViKE8\\ntVVj79KAx13SfXiV+q/ghI+NiS4PLlz90qnKyXGXmDJOVQOOUexNiIE3Ov+mWkpI\\nhcg83qNCMEAwDgYDVR0PAQH/BAQDAgIEMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0O\\nBBYEFN3UbzXxAiZZmZC9a+6VkoXsErIWMAoGCCqGSM49BAMCA0kAMEYCIQD17Wai\\nak/Dzbia2mW0dC+H2DRuFNqFcvQxhos8TYhi5gIhAN2zQT1lQXM55ual8UQiXqpx\\nJuj6jSYb6jjkVa7mKelV\\n-----END CERTIFICATE-----\\n\",\"cpuCount\":2,\"defaultUser\":\"use"
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 204 No Content",
+  "token": null
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "GET /metrics",
+  "token": "27ff613aaf62"
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "GET /health",
+  "token": null
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 204 No Content",
+  "token": null
+ },
+ {
+  "utc": "21:21:21.842",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 200 OK",
+  "token": null
+ },
+ {
+  "utc": "21:21:21.962",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "POST /process.Process/Start",
+  "token": "27ff613aaf62"
+ },
+ {
+  "utc": "21:21:21.962",
+  "dir": "out",
+  "body_red": "\u0000\u0000\u0000\u0000v{\"process\":{\"cmd\":\"/bin/bash\",\"args\":[\"-l\",\"-c\",\"mkdir -p '/home/user/AuditArena'\"],\"cwd\":\"/home/user\"},\"stdin\":false}"
+ },
+ {
+  "utc": "21:21:21.968",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 200 OK",
+  "token": null
+ },
+ {
+  "utc": "21:21:22.095",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "POST /process.Process/Start",
+  "token": "27ff613aaf62"
+ },
+ {
+  "utc": "21:21:22.096",
+  "dir": "out",
+  "body_red": "\u0000\u0000\u0000\u0000o{\"process\":{\"cmd\":\"/bin/bash\",\"args\":[\"-l\",\"-c\",\"mkdir -p '/tmp/<REDACTED len=15 sha8=50b266d0>'\"],\"cwd\":\"/tmp\"},\"stdin\":false}"
+ },
+ {
+  "utc": "21:21:22.096",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 200 OK",
+  "token": null
+ },
+ {
+  "utc": "21:21:22.401",
+  "dir": "out",
+  "peer": "10.12.0.48",
+  "first": "GET /metrics",
+  "token": "27ff613aaf62"
+ },
+ {
+  "utc": "21:21:22.401",
+  "dir": "in",
+  "peer": "10.12.0.48",
+  "first": "HTTP/1.1 200 OK",
+  "token": null
+ }
+]

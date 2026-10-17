@@ -1,0 +1,32 @@
+{
+ "init": {
+  "utc": "21:04:09.559",
+  "peer": "10.12.0.122:39994>169.254.0.21:49983",
+  "header_token_sha512_12": "f17e635d770f",
+  "body_keys": [
+   "accessToken",
+   "caBundle",
+   "cpuCount",
+   "defaultUser",
+   "hyperloopIP",
+   "lifecycleID",
+   "timestamp"
+  ],
+  "cpuCount": 2,
+  "defaultUser": "user",
+  "hyperloopIP": "192.0.2.1",
+  "caBundle_sha256_12": "2c3e37e3dcb8"
+ },
+ "tokens": {
+  "f17e635d770f": [
+   "20:48:47.309",
+   "21:05:09.866",
+   6812
+  ],
+  "27ff613aaf62": [
+   "21:11:06.931",
+   "21:14:46.020",
+   2542
+  ]
+ }
+}

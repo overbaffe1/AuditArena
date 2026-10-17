@@ -1,0 +1,1152 @@
+[
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.48:36434>169.254.0.21:49983",
+  "first": "POST /freeze?maxWaitMs=1500&mode=hierarchy&maxCgroups=512 HTTP/1.1",
+  "utc": "21:33:12.169",
+  "t_real": 1792272792.1695213,
+  "headers": {
+   "host": "10.11.0.24:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.48:36434",
+  "first": "HTTP/1.1 204 No Content",
+  "utc": "21:44:36.977",
+  "t_real": 1792273476.9776335,
+  "headers": {
+   "cache-control": "no-store",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:33:12 GMT",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35368>169.254.0.21:49983",
+  "first": "POST /init HTTP/1.1",
+  "utc": "21:44:36.980",
+  "t_real": 1792273476.9806302,
+  "headers": {
+   "host": "10.11.0.3:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 860
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35368>169.254.0.21:49983",
+  "body_red": "{\"accessToken\":\"<REDACTED len=64 sha8=2a1cc6b1>\",\"caBundle\":\"-----BEGIN CERTIFICATE-----\\nMIIBizCCATCgAwIBAgIQc5rrYZyGay…<CA PEM обрезан>",
+  "utc": "21:44:36.980",
+  "t_real": 1792273476.9808383
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35384>169.254.0.21:49983",
+  "first": "POST /init HTTP/1.1",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.981004,
+  "headers": {
+   "host": "10.11.0.3:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 860
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35384>169.254.0.21:49983",
+  "body_red": "{\"accessToken\":\"<REDACTED len=64 sha8=2a1cc6b1>\",\"caBundle\":\"-----BEGIN CERTIFICATE-----\\nMIIBizCCATCgAwIBAgIQc5rrYZyGay…<CA PEM обрезан>",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.9810996
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35368",
+  "first": "HTTP/1.1 204 No Content",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.9811945,
+  "headers": {
+   "cache-control": "no-store",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:36 GMT",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35384",
+  "first": "HTTP/1.1 204 No Content",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.9814205,
+  "headers": {
+   "cache-control": "no-store",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:36 GMT",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35386>169.254.0.21:49983",
+  "first": "GET /metrics HTTP/1.1",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.981584,
+  "headers": {
+   "host": "10.11.0.3:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35396>169.254.0.21:49983",
+  "first": "GET /health HTTP/1.1",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.9816978,
+  "headers": {
+   "host": "10.11.0.3:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35386",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.981807,
+  "headers": {
+   "cache-control": "no-store",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:36 GMT",
+   "content-length": "207",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35396",
+  "first": "HTTP/1.1 204 No Content",
+  "utc": "21:44:36.981",
+  "t_real": 1792273476.9819286,
+  "headers": {
+   "cache-control": "no-store",
+   "content-type": "",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:36 GMT",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35400>169.254.0.21:49983",
+  "first": "POST /process.Process/Start HTTP/1.1",
+  "utc": "21:44:37.089",
+  "t_real": 1792273477.0893831,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/connect+json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 123
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35400>169.254.0.21:49983",
+  "body_red": "\u0000\u0000\u0000\u0000v{\"process\":{\"cmd\":\"/bin/bash\",\"args\":[\"-l\",\"-c\",\"mkdir -p '/home/user/AuditArena'\"],\"cwd\":\"/home/user\"},\"stdin\":false}",
+  "utc": "21:44:37.089",
+  "t_real": 1792273477.0898156
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35400",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:37.092",
+  "t_real": 1792273477.0924165,
+  "headers": {
+   "connect-accept-encoding": "gzip",
+   "content-type": "application/connect+json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:37 GMT",
+   "connection": "close",
+   "transfer-encoding": "chunked"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35400",
+  "first": "25",
+  "utc": "21:44:37.109",
+  "t_real": 1792273477.1090846,
+  "headers": {
+   "\u0000\u0000\u0000\u0000 {\"event\"": "{\"start\":{\"pid\":2226}}}",
+   "\u0000\u0000\u0000\u0000": "{\"event\":{\"end\":{\"exited\":true,\"status\":\"exit status 0\"}}}"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35414>169.254.0.21:49983",
+  "first": "POST /process.Process/Start HTTP/1.1",
+  "utc": "21:44:37.253",
+  "t_real": 1792273477.2533844,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/connect+json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 116
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35414>169.254.0.21:49983",
+  "body_red": "\u0000\u0000\u0000\u0000o{\"process\":{\"cmd\":\"/bin/bash\",\"args\":[\"-l\",\"-c\",\"mkdir -p '/tmp/<REDACTED len=15 sha8=50b266d0>'\"],\"cwd\":\"/tmp\"},\"stdin\":false}",
+  "utc": "21:44:37.253",
+  "t_real": 1792273477.2536907
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35414",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:37.255",
+  "t_real": 1792273477.2554073,
+  "headers": {
+   "connect-accept-encoding": "gzip",
+   "content-type": "application/connect+json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:37 GMT",
+   "connection": "close",
+   "transfer-encoding": "chunked"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35414",
+  "first": "25",
+  "utc": "21:44:37.265",
+  "t_real": 1792273477.2651668,
+  "headers": {
+   "\u0000\u0000\u0000\u0000 {\"event\"": "{\"start\":{\"pid\":2228}}}",
+   "\u0000\u0000\u0000\u0000": "{\"event\":{\"end\":{\"exited\":true,\"status\":\"exit status 0\"}}}"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35426>169.254.0.21:49983",
+  "first": "GET /metrics HTTP/1.1",
+  "utc": "21:44:37.430",
+  "t_real": 1792273477.4306936,
+  "headers": {
+   "host": "10.11.0.3:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35426",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:37.431",
+  "t_real": 1792273477.4313455,
+  "headers": {
+   "cache-control": "no-store",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:37 GMT",
+   "content-length": "207",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35438>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/WatchDir HTTP/1.1",
+  "utc": "21:44:38.547",
+  "t_real": 1792273478.5477433,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/connect+json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 37
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35438",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.548",
+  "t_real": 1792273478.5484447,
+  "headers": {
+   "connect-accept-encoding": "gzip",
+   "content-type": "application/connect+json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "connection": "close",
+   "transfer-encoding": "chunked"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35454>169.254.0.21:49983",
+  "first": "POST /process.Process/Start HTTP/1.1",
+  "utc": "21:44:38.691",
+  "t_real": 1792273478.6919918,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/connect+json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 1119
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35454>169.254.0.21:49983",
+  "body_red": "\u0000\u0000\u0000\u0004Z{\"process\":{\"cmd\":\"/bin/bash\",\"args\":[\"-l\",\"-c\",\"cd /home/user/AuditArena && echo \\\"=== DMI (ÐºÑÐ¾ Ð¼Ñ Ð¿Ð¾ SMBIOS) ===\\\" && for f in sys_vendor product_name product_version bios_vendor bios_version; do echo -n \\\"$f: \\\"; cat /sys/class/dmi/id/$f 2>/dev/null; done && echo && echo \\\"=== cgroup Ð¼Ð¾ÐµÐ³Ð¾ bash Ð¸ envd ===\\\" && cat /proc/self/cgroup && cat /proc/1229/cgroup && echo && echo \\\"=== memory.min ÑÐµÐ¿Ð¾ÑÐºÐ° envd (X-Envd-Memory Ð¸Ð·Ð½ÑÑÑÐ¸) ===\\\" && for p in /sys/fs/cgroup /sys/fs/cgroup/system.slice /sys/fs/cgroup/system.slice/envd.service; do echo -n \\\"$p: memory.min=\\\"; cat $p/memory.min 2>/dev/null || echo '?'; done && echo \\\"=== freezer-ÑÐ°Ð¹Ð»Ñ ===\\\" && sudo -n find /sys/fs/cgroup -maxdepth 3 -name 'cgroup.freeze' 2>/dev/null | head -8 && echo && echo \\\"=== nat-ÑÐ°Ð±Ð»Ð¸ÑÐ° (Ð¿Ð¸Ð½Ð½Ð¸Ð½Ð³ MMDS) ===\\\" && sudo -n iptables -t nat -S 2>/dev/null | head -12 && echo && echo \\\"=== Ð¼Ð°ÑÑÑÑÑ Ð¸ ÑÐ¾ÐµÐ´Ð¸Ð½ÐµÐ½Ð¸Ñ Ðº hyperloop ===\\\" && ip route get 192.0.2.1 2>&1 | head -2 && ss -tnp 2>/dev/null | grep -E '192\\\\.0\\\\.2\\\\.1|State' | head -6\"],\"cwd\":\"/home/user\"},\"stdin\":false}",
+  "utc": "21:44:38.692",
+  "t_real": 1792273478.692588
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35454",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.693",
+  "t_real": 1792273478.693734,
+  "headers": {
+   "connect-accept-encoding": "gzip",
+   "content-type": "application/connect+json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "connection": "close",
+   "transfer-encoding": "chunked"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35454",
+  "first": "25",
+  "utc": "21:44:38.709",
+  "t_real": 1792273478.7097065,
+  "headers": {
+   "\u0000\u0000\u0000\u0000 {\"event\"": "{\"start\":{\"pid\":2230}}}",
+   "\u0000\u0000\u0000\u0000t{\"event\"": "{\"data\":{\"stdout\":\"PT09IERNSSAo0LrRgtC+INC80Ysg0L/QviBTTUJJT1MpID09PQo=\"}}}",
+   "\u0000\u0000\u0000\u00000{\"event\"": "{\"data\":{\"stdout\":\"c3lzX3ZlbmRvcjog\"}}}",
+   "\u0000\u0000\u0000\u00004{\"event\"": "{\"data\":{\"stdout\":\"Ymlvc192ZXJzaW9uOiA=\"}}}",
+   "\u0000\u0000\u0000\u00008{\"event\"": "{\"data\":{\"stdout\":\"cHJvZHVjdF92ZXJzaW9uOiA=\"}}}",
+   "\u0000\u0000\u0000\u0000_{\"event\"": "{\"end\":{\"exitCode\":1,\"exited\":true,\"status\":\"exit status 1\",\"error\":\"exit status 1\"}}}"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35458>169.254.0.21:49983",
+  "first": "POST /process.Process/Start HTTP/1.1",
+  "utc": "21:44:38.754",
+  "t_real": 1792273478.7540495,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/connect+json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 394
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35458>169.254.0.21:49983",
+  "body_red": "\u0000\u0000\u0000\u0001{\"process\":{\"cmd\":\"/bin/bash\",\"args\":[\"-l\",\"-c\",\"cd /tmp && echo \\\"=== hyperloop Ð² Ð´ÐµÑÐµÐ²Ðµ runtime ===\\\" && tar -tzf rt.tar.gz | grep -i hyperloop | head -10; echo \\\"=== orchestrator: ÑÐ°Ð¹Ð»Ñ Ð¿ÑÐ¾ pause/resume/snapshot ===\\\" && tar -tzf rt.tar.gz | grep -E 'packages/orchestrator/internal/(sandbox|server)' | grep -vE '_test|mock' | head -25\"],\"cwd\":\"/home/user\"},\"stdin\":false}",
+  "utc": "21:44:38.754",
+  "t_real": 1792273478.7544825
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35458",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.759",
+  "t_real": 1792273478.7592647,
+  "headers": {
+   "connect-accept-encoding": "gzip",
+   "content-type": "application/connect+json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "connection": "close",
+   "transfer-encoding": "chunked"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35460>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:38.797",
+  "t_real": 1792273478.797416,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 49
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35460>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-wire17.log\"}",
+  "utc": "21:44:38.797",
+  "t_real": 1792273478.7976873
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35476>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:38.797",
+  "t_real": 1792273478.7977707,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 54
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35476>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.<REDACTED len=16 sha8=d2eb9c2d>.log\"}",
+  "utc": "21:44:38.797",
+  "t_real": 1792273478.7978525
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35476",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.817",
+  "t_real": 1792273478.817548,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35460",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.838",
+  "t_real": 1792273478.8382096,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "content-length": "206",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35480>169.254.0.21:49983",
+  "first": "GET /metrics HTTP/1.1",
+  "utc": "21:44:38.956",
+  "t_real": 1792273478.9560122,
+  "headers": {
+   "host": "10.11.0.3:49983",
+   "user-agent": "Go-http-client/1.1"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35480",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.956",
+  "t_real": 1792273478.9565687,
+  "headers": {
+   "cache-control": "no-store",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "content-length": "207",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35482>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:38.990",
+  "t_real": 1792273478.990947,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 52
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35482>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-children2.log\"}",
+  "utc": "21:44:38.991",
+  "t_real": 1792273478.9912822
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35482",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:38.992",
+  "t_real": 1792273478.9922144,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:38 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35496>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.011",
+  "t_real": 1792273479.011198,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 49
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35496>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-wire17.log\"}",
+  "utc": "21:44:39.011",
+  "t_real": 1792273479.0119483
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35496",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.012",
+  "t_real": 1792273479.0122383,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "207",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35458",
+  "first": "25",
+  "utc": "21:44:39.083",
+  "t_real": 1792273479.0837305,
+  "headers": {
+   "\u0000\u0000\u0000\u0000 {\"event\"": "{\"start\":{\"pid\":2237}}}",
+   "\u0000\u0000\u0000\u0000x{\"event\"": "{\"data\":{\"stdout\":\"PT09IGh5cGVybG9vcCDQsiDQtNC10YDQtdCy0LUgcnVudGltZSA9PT0K\"}}}",
+   "\u0000\u0000\u0000\u0003ð{\"event\"": "{\"data\":{\"stdout\":\"cnVudGltZS1tYWluL3BhY2thZ2VzL29yY2hlc3RyYXRvci9wa2cvaHlwZXJsb29wc2VydmVyLwpydW50aW1lLW1haW4vcGFja2FnZXMvb3JjaGVzdHJhdG9yL3BrZy9oeXBlcmxvb3BzZXJ2ZXIvY29udHJhY3RzLwpydW50aW1lLW1haW4vc",
+   "\u0000\u0000\u0000\u0000t{\"event\"": "{\"data\":{\"stdout\":\"PT09IG9yY2hlc3RyYXRvcjog0YTQsNC50LvRiyDQv9GA0L4gcGF1c2UvcmVzdW1lL3NuYXBzaG90ID09PQo=\"}}}",
+   "\u0000\u0000\u0000\u0000": "{\"event\":{\"end\":{\"exited\":true,\"status\":\"exit status 0\"}}}"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35506>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.111",
+  "t_real": 1792273479.1111991,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 52
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35506>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-children2.log\"}",
+  "utc": "21:44:39.111",
+  "t_real": 1792273479.111864
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35506",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.112",
+  "t_real": 1792273479.1126735,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35516>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.262",
+  "t_real": 1792273479.2622588,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 52
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35516>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-children2.log\"}",
+  "utc": "21:44:39.262",
+  "t_real": 1792273479.2625344
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35516",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.263",
+  "t_real": 1792273479.2635899,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35524>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.285",
+  "t_real": 1792273479.2856653,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 49
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35524>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-wire17.log\"}",
+  "utc": "21:44:39.286",
+  "t_real": 1792273479.2864947
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35524",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.287",
+  "t_real": 1792273479.2870786,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "207",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35534>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.289",
+  "t_real": 1792273479.2897549,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 54
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35534>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.<REDACTED len=16 sha8=d2eb9c2d>.log\"}",
+  "utc": "21:44:39.289",
+  "t_real": 1792273479.2899072
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35534",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.290",
+  "t_real": 1792273479.2900589,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "208",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35548>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.466",
+  "t_real": 1792273479.466013,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 54
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35548>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.<REDACTED len=16 sha8=d2eb9c2d>.log\"}",
+  "utc": "21:44:39.466",
+  "t_real": 1792273479.4662488
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35548",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.466",
+  "t_real": 1792273479.466736,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35552>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.467",
+  "t_real": 1792273479.467182,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 49
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35552>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-wire17.log\"}",
+  "utc": "21:44:39.467",
+  "t_real": 1792273479.4674275
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35552",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.468",
+  "t_real": 1792273479.4683342,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "204",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35566>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.646",
+  "t_real": 1792273479.646928,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 49
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35566>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-wire17.log\"}",
+  "utc": "21:44:39.647",
+  "t_real": 1792273479.6474156
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35566",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.648",
+  "t_real": 1792273479.6480587,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "206",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35576>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.653",
+  "t_real": 1792273479.653179,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 54
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35576>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.<REDACTED len=16 sha8=d2eb9c2d>.log\"}",
+  "utc": "21:44:39.653",
+  "t_real": 1792273479.6534126
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35576",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.653",
+  "t_real": 1792273479.653693,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35590>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.830",
+  "t_real": 1792273479.8305047,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 54
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35590>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.<REDACTED len=16 sha8=d2eb9c2d>.log\"}",
+  "utc": "21:44:39.830",
+  "t_real": 1792273479.8307817
+ },
+ {
+  "event": "http",
+  "dir": "out",
+  "peer": "10.12.0.6:35602>169.254.0.21:49983",
+  "first": "POST /filesystem.Filesystem/Stat HTTP/1.1",
+  "utc": "21:44:39.831",
+  "t_real": 1792273479.8312666,
+  "headers": {
+   "host": "49983-imosg17opozcvx0fcjvzj.e2b.app",
+   "user-agent": "e2b-js-sdk/2.51.0",
+   "content-type": "application/json"
+  },
+  "token": {
+   "len": 64,
+   "prefix4": "7365",
+   "sha512_12": "27ff613aaf62"
+  },
+  "body_skip": 49
+ },
+ {
+  "event": "body",
+  "dir": "out",
+  "peer": "10.12.0.6:35602>169.254.0.21:49983",
+  "body_red": "{\"path\":\"/home/user/AuditArena/.envd-wire17.log\"}",
+  "utc": "21:44:39.831",
+  "t_real": 1792273479.831475
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35590",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.835",
+  "t_real": 1792273479.8351426,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "209",
+   "connection": "close"
+  },
+  "body_skip": 0
+ },
+ {
+  "event": "http",
+  "dir": "in",
+  "peer": "169.254.0.21:49983>10.12.0.6:35602",
+  "first": "HTTP/1.1 200 OK",
+  "utc": "21:44:39.835",
+  "t_real": 1792273479.8355625,
+  "headers": {
+   "accept-encoding": "gzip",
+   "content-encoding": "gzip",
+   "content-type": "application/json",
+   "vary": "Origin",
+   "date": "Sat, 17 Oct 2026 21:44:39 GMT",
+   "content-length": "207",
+   "connection": "close"
+  },
+  "body_skip": 0
+ }
+]
